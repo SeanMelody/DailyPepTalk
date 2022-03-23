@@ -2,3 +2,5 @@ Daily Pep Talk from a best friend. Daily affirmations, that you are doing wonder
 
 
 Inspired by the no longer updated website: https://dailypeptalkfromabestfriend.com/
+
+![Daily Pep Talk for a Best Friend Website] (/images/DailyPepTalkFromABestFriend.png)
