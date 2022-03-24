@@ -1,6 +1,7 @@
 import React from 'react'
 import API from '../Utils/API';
 import axios from "axios"
+import Quotes from '../Components/Quotes';
 
 const Home = () => {
 
@@ -39,6 +40,7 @@ const Home = () => {
             {/* <h1>Press Me for a quote!</h1> */}
             <button onClick={quoteGen}>Quote</button>
             {/* <API /> */}
+            <Quotes />
         </div >
     )
 }
