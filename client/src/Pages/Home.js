@@ -4,14 +4,14 @@ import axios from "axios"
 
 const Home = () => {
 
-    // dotenv const to hide API key
-    const dotenv = require('dotenv').config()
-    // Check for errors
-    if (dotenv.error) {
-        throw dotenv.error
-    }
-    // Set the .env data as a varible for the API Key
-    const quotesAPI = dotenv.parsed.quotesAPI
+    // // dotenv const to hide API key
+    // const dotenv = require('dotenv').config()
+    // // Check for errors
+    // if (dotenv.error) {
+    //     throw dotenv.error
+    // }
+    // // Set the .env data as a variable for the API Key
+    // const quotesAPI = dotenv.parsed.quotesAPI
 
 
     const quoteGen = () => {
@@ -21,7 +21,7 @@ const Home = () => {
             url: 'https://quotes15.p.rapidapi.com/quotes/random/',
             headers: {
                 'X-RapidAPI-Host': 'quotes15.p.rapidapi.com',
-                'X-RapidAPI-Key': quotesAPI
+                // 'X-RapidAPI-Key': quotesAPI
             }
         };
 
