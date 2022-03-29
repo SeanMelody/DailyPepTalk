@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from "axios"
 
 
 const SubmitQuote = () => {
@@ -18,17 +19,23 @@ const SubmitQuote = () => {
     const submit = (e) => {
         e.preventDefault();
         console.log(submitQuote)
+        try {
+            const newQuote = axios.post("/api/submittedQuote", submitQuote)
+            console.log(newQuote.data)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
         <div className="submit-quote space-large">SubmitQuote
             <form onSubmit={submit}>
-                <input
+                <textarea
                     type="text"
                     name="quote"
                     id="quote"
                     placeholder="quote"
-                    onChange={onChange}></input>
+                    onChange={onChange}></textarea>
                 <input type="text"
                     name="author"
                     id="author"
