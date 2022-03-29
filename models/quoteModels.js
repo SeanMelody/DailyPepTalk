@@ -1,7 +1,7 @@
 // Required Const for Mongoose
 const mongoose = require("mongoose")
 
-const quoteSchema = new mongoose.Schema({
+const quotesSchema = new mongoose.Schema({
     author: {
         type: String,
         required: true
@@ -21,4 +21,4 @@ const quoteSchema = new mongoose.Schema({
 });
 
 // module.export it! as Quotes
-module.exports = Quotes = mongoose.model("Quotes", quoteSchema);
+module.exports = Quotes = mongoose.model("Quotes", quotesSchema);

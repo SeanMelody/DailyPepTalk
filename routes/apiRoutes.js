@@ -14,6 +14,7 @@ router.get("/quotes", (req, res) => {
     try {
         const allQuotes = Quotes.find({})
         res.json(all)
+        console.log(allQuotes.data)
 
     } catch (error) {
         console.log("Not able to get the quotes")
