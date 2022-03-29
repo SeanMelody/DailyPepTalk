@@ -2,7 +2,7 @@ import React from 'react'
 
 const Quotes = () => {
     return (
-        <card>
+        <div>
             <div>Quote Title</div>
             <hr></hr>
             <div>
@@ -10,7 +10,7 @@ const Quotes = () => {
                 <p>Author</p>
             </div>
             <div>Quote Footer</div>
-        </card>
+        </div>
     )
 }
 
