@@ -22,12 +22,12 @@ const transporter = nodemailer.createTransport({
 router.post("/submittedQuote", (req, res, next) => {
     // console.log(req.body)
     // Set the message contents
-    const newQuote =
-        `Quote: ${req.body.quote}
-        Author: ${req.body.author}
-        Submitted By: ${req.body.submittedBy}
-        Email: Need to set up email
-        Tags: ${req.body.tags}`
+    const newQuote = req.body
+    // `Quote: ${req.body.quote}
+    // Author: ${req.body.author}
+    // Submitted By: ${req.body.submittedBy}
+    // Email: Need to set up email
+    // Tags: ${req.body.tags}`
     console.log(newQuote)
 
     const subject = `New Submitted Quote from ${req.body.submittedBy}`
