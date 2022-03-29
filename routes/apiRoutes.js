@@ -1,10 +1,24 @@
 const router = require("express").Router();
 const nodemailer = require("nodemailer")
+const Quotes = require("../models/quoteModels")
 require("dotenv").config();
 
 // Test route unused later
 router.get("/test", (req, res) => {
     res.send("test route")
+})
+
+// Route to get all the quotes from the Mongoose Database
+router.get("/quotes", (req, res) => {
+
+    try {
+        const allQuotes = Quotes.find({})
+        res.json(all)
+
+    } catch (error) {
+        console.log("Not able to get the quotes")
+    }
+
 })
 
 // console.log(process.env.EPASS)
