@@ -36,13 +36,32 @@ router.post("/submittedQuote", (req, res, next) => {
         from: process.env.EMAIL,
         to: process.env.EMAIL,
         subject: subject,
-        html: `<stlye>
-        <h3>Author: ${newQuote.author}</h3>
-        <p>Quote: ${newQuote.quote}</p>
-        <h4>Submitted by: ${newQuote.submittedBy}</h4>
-        <h4><a href="google.com">Email: Need to set this up</a></h4>
-        <p>Tags: </p>
-        <img src="/client/public/Favicon.png">
+        html:
+            `
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <style>
+            body {
+            background-color: linen;
+            }
+        
+            h1 {
+            color: maroon;
+            margin-left: 40px;
+            }
+        </style>
+        </head>
+        <body>
+            <h3>Author: ${newQuote.author}</h3>
+            <p>Quote: ${newQuote.quote}</p>
+            <h4>Submitted by: ${newQuote.submittedBy}</h4>
+            <h4><a href="google.com">Email: Need to set this up</a></h4>
+            <p>Tags: ${newQuote.tags}</p>
+            <img src="../client/public/Favicon.png">
+
+        </body>
+        </html>
         `
     }
 

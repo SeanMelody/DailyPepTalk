@@ -20,8 +20,11 @@ const SubmitQuote = () => {
         e.preventDefault();
         console.log(submitQuote)
         try {
-            const newQuote = axios.post("/api/submittedQuote", submitQuote)
-            console.log(newQuote.data)
+            axios.post("/api/submittedQuote", submitQuote)
+                .then((data) => {
+                    console.log(data)
+                })
+            console.log("submitted successfully")
         } catch (error) {
             console.log(error)
         }
