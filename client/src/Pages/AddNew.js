@@ -37,7 +37,7 @@ const AddNew = () => {
         const password = prompt("Whats the password")
 
 
-        if (password !== "pass") navigate("/")
+        if (password !== "7777") navigate("/")
     }, [navigate])
 
     return (

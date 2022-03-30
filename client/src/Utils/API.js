@@ -1,5 +1,6 @@
 // Import axios
 import axios from "axios";
+// require("dotenv").config();
 
 // const API = () => {
 
@@ -8,7 +9,7 @@ import axios from "axios";
     //     url: 'https://quotes15.p.rapidapi.com/quotes/random/',
     //     headers: {
     //         'X-RapidAPI-Host': 'quotes15.p.rapidapi.com',
-    //         'X-RapidAPI-Key': 'e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21'
+    //         'X-RapidAPI-Key': quotesAPI
     //     }
     // };
 
