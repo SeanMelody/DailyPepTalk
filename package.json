@@ -23,7 +23,6 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.8",
     "nodemailer": "^6.7.3",
-    "react-router-dom": "^6.2.2",
     "webpack": "^5.70.0"
   }
 }
