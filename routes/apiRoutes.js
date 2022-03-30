@@ -9,8 +9,8 @@ router.get("/test", (req, res) => {
 })
 
 // Route to get all the quotes from the Mongoose Database
-router.get("/allquotes", async (req, res) => {
-    console.log("allquotes hit")
+router.get("/quotes", async (req, res) => {
+    console.log("quotes hit")
     // res.send("quotes route")
     try {
         const allQuotes = await Quotes.find({})
@@ -23,8 +23,8 @@ router.get("/allquotes", async (req, res) => {
 
 })
 
-router.post("/allquotes", async (req, res) => {
-    console.log("post allquotes hit")
+router.post("/quotes", async (req, res) => {
+    console.log("post quotes hit")
     try {
         const newQuote = new Quotes({
             author: req.body.author,

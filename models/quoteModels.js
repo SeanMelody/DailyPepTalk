@@ -15,7 +15,8 @@ const quotesSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        match: [/.+@.+\..+/, "Please enter a valid email"]
+        match: [/.+@.+\..+/, "Please enter a valid email"],
+        required: false
     },
     tags: {
         type: String,
