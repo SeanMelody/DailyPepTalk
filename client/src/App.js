@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import Home from './Pages/Home';
 import SubmitQuote from './Pages/SubmitQuote';
+import AddNew from './Pages/AddNew'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         </div>
         <Routes>
           <Route path="submit" element={<SubmitQuote />} />
+          <Route path="addnew" element={<AddNew />} />
           <Route path="/" element={<Home />} />
         </Routes>
 
