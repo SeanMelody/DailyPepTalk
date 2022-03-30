@@ -9,6 +9,7 @@ const SubmitQuote = () => {
         quote: "",
         author: "",
         submittedBy: "",
+        email: "",
         tags: [],
     })
     // Set the change for state
@@ -48,6 +49,11 @@ const SubmitQuote = () => {
                     name="submittedBy"
                     id="submittedBy"
                     placeholder="Your Name"
+                    onChange={onChange}></input>
+                <input type="text"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
                     onChange={onChange}></input>
                 <input type="text"
                     name="tags"

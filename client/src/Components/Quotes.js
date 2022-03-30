@@ -10,6 +10,7 @@ const Quotes = () => {
                 <p>Author</p>
             </div>
             <div>Quote Footer</div>
+            <p>Submitted by</p>
         </div>
     )
 }

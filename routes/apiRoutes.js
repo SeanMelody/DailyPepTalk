@@ -22,6 +22,26 @@ router.get("/quotes", (req, res) => {
 
 })
 
+router.post("/addQuote", (req, res) => {
+
+    try {
+        const newQuote = new Quote({
+            author: req.body.author,
+            quote: req.body.quote,
+            submittedBy: req.body.submittedBy,
+            email: req.body.email,
+            tags: req.body.tags
+        })
+        const successSave = newBook.save()
+        res.json(successSave)
+
+    } catch (err) {
+        res.status().send("error saving new Quote: ", err)
+    }
+
+
+})
+
 // console.log(process.env.EPASS)
 
 // Transporter for emailing a new messasge to me!
@@ -71,6 +91,7 @@ router.post("/submittedQuote", (req, res, next) => {
             <h3>Author: ${newQuote.author}</h3>
             <p>Quote: ${newQuote.quote}</p>
             <h4>Submitted by: ${newQuote.submittedBy}</h4>
+            <h4>Submitted by: ${newQuote.email}</h4>
             <h4><a href="google.com">Email: Need to set this up</a></h4>
             <p>Tags: ${newQuote.tags}</p>
             <img src="../client/public/Favicon.png">
