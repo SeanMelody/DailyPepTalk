@@ -12,6 +12,7 @@ const AddNew = () => {
         quote: "",
         author: "",
         submittedBy: "",
+        email: "",
         tags: [],
     })
     // Set the change for state
@@ -22,23 +23,23 @@ const AddNew = () => {
     const submit = (e) => {
         e.preventDefault();
         console.log(addQuote)
-        // try {
-        //     axios.post("/api/addQuote", addQuote)
-        //         .then((data) => {
-        //             console.log(data)
-        //         })
-        //     console.log("submitted successfully")
-        // } catch (error) {
-        //     console.log(error)
-        // }
+        try {
+            axios.post("/api/quotes", addQuote)
+                .then((data) => {
+                    console.log(data)
+                })
+            console.log("submitted successfully")
+        } catch (error) {
+            console.log(error)
+        }
     }
 
-    useEffect(() => {
-        const password = prompt("Whats the password")
+    // useEffect(() => {
+    //     const password = prompt("Whats the password")
 
 
-        if (password !== "7777") navigate("/")
-    }, [navigate])
+    //     if (password !== "7777") navigate("/")
+    // }, [navigate])
 
     return (
         <div className="submit-quote space-large">Add Quote

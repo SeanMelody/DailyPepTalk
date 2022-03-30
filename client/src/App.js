@@ -16,6 +16,9 @@ function App() {
           <Link to="/submit">
             Submit A Quote
           </Link>
+          <Link to="/addnew">
+            Add
+          </Link>
         </div>
         <Routes>
           <Route path="submit" element={<SubmitQuote />} />

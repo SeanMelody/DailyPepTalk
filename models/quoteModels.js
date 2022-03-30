@@ -10,7 +10,7 @@ const quotesSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    submittedBy: {
+    from: {
         type: String
     },
     email: {
@@ -18,11 +18,11 @@ const quotesSchema = new mongoose.Schema({
         match: [/.+@.+\..+/, "Please enter a valid email"]
     },
     tags: {
-        type: [String],
+        type: String,
         required: false
     }
 
 });
 
 // module.export it! as Quotes
-module.exports = Quotes = mongoose.model("Quotes", quotesSchema);
+module.exports = Quotes = mongoose.model("quotes", quotesSchema);

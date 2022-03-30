@@ -9,34 +9,35 @@ router.get("/test", (req, res) => {
 })
 
 // Route to get all the quotes from the Mongoose Database
-router.get("/quotes", (req, res) => {
-
+router.get("/allquotes", async (req, res) => {
+    console.log("allquotes hit")
+    // res.send("quotes route")
     try {
-        const allQuotes = Quotes.find({})
-        res.json(all)
-        console.log(allQuotes.data)
+        const allQuotes = await Quotes.find({})
+        res.json(allQuotes)
+        // console.log(allQuotes.data)
 
     } catch (error) {
-        console.log("Not able to get the quotes")
+        console.log("Not able to get the quotes", error)
     }
 
 })
 
-router.post("/addQuote", (req, res) => {
-
+router.post("/allquotes", async (req, res) => {
+    console.log("post allquotes hit")
     try {
-        const newQuote = new Quote({
+        const newQuote = new Quotes({
             author: req.body.author,
             quote: req.body.quote,
             submittedBy: req.body.submittedBy,
             email: req.body.email,
             tags: req.body.tags
         })
-        const successSave = newBook.save()
+        const successSave = await newQuote.save()
         res.json(successSave)
 
     } catch (err) {
-        res.status().send("error saving new Quote: ", err)
+        console.log(err)
     }
 
 

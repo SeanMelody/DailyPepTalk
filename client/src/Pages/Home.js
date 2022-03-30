@@ -1,5 +1,5 @@
 import React from 'react'
-import API from '../Utils/API';
+// import API from '../Utils/API';
 import axios from "axios"
 import Quotes from '../Components/Quotes';
 

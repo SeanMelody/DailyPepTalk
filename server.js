@@ -5,8 +5,8 @@ require("dotenv").config();
 const path = require("path");
 const mongoose = require("mongoose")
 
-//Set up the port for Heroku deployment and development to 5050 cause I'm crazy!
-const PORT = process.env.PORT || 5050;
+//Set up the port for Heroku deployment and development to 5000
+const PORT = process.env.PORT || 5000;
 
 
 // Middleware
@@ -37,5 +37,5 @@ mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/Quotes",
 );
 
 app.listen(PORT, () => {
-    console.log(`listening at http://localhost:${PORT}`);
+    console.log(`listening at https://localhost:${PORT}`);
 })
