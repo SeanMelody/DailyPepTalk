@@ -19,12 +19,13 @@ const Home = () => {
     const quoteGen = () => {
 
         var options = {
-            method: 'GET',
-            url: 'https://quotes15.p.rapidapi.com/quotes/random/',
-            headers: {
-                'X-RapidAPI-Host': 'quotes15.p.rapidapi.com',
-                // 'X-RapidAPI-Key': quotesAPI
-            }
+            // method: 'GET',
+            // url: 'https://world-of-quotes.p.rapidapi.com/v1/quotes/quote-of-the-day',
+            // params: { category: 'inspirational' },
+            // headers: {
+            //     'X-RapidAPI-Host': 'world-of-quotes.p.rapidapi.com',
+
+            // }
         };
 
         axios.request(options).then(function (response) {
@@ -71,9 +72,6 @@ const Home = () => {
                         <Quotes quote={quote} />
 
                     ))}
-
-
-
 
                 </div>
             ) : (
