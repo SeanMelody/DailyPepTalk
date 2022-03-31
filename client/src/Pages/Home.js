@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 // import API from '../Utils/API';
 import axios from "axios"
 import Quotes from '../Components/Quotes';
+import ExternalQuote from './ExternalQuote';
 
 const Home = () => {
 
@@ -44,13 +45,14 @@ const Home = () => {
 
 
             {/* <Quotes /> */}
+            <ExternalQuote />
 
             {quotes.length ? (
                 // Map through the quotes database displaying each as a Quotes Component
                 <div>
                     {quotes.map((quote) => (
 
-                        <Quotes quote={quote} />
+                        <Quotes quote={quote} key={Math.random()} />
 
                     ))}
 

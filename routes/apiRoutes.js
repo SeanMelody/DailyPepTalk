@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const nodemailer = require("nodemailer")
 const Quotes = require("../models/quoteModels")
+const axios = require("axios")
 require("dotenv").config();
 
 // Test route unused later
@@ -47,6 +48,21 @@ router.get("/externalquote", async (req, res) => {
 
     try {
         console.log("externalquote hit")
+        const getQuote = {
+            method: 'GET',
+            url: 'https://world-of-quotes.p.rapidapi.com/v1/quotes/quote-of-the-day',
+            params: { category: 'inspirational' },
+            headers: {
+                'X-RapidAPI-Host': 'world-of-quotes.p.rapidapi.com',
+                'X-RapidAPI-Key': process.env.quotesAPI
+            }
+        };
+
+        await axios.request(getQuote).then(function (response) {
+            console.log(response.data);
+        }).catch(function (error) {
+            console.error(error);
+        });
 
     } catch (error) {
         console.log(error)
