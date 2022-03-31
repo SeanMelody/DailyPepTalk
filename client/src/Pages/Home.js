@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 // import API from '../Utils/API';
 import axios from "axios"
 import Quotes from '../Components/Quotes';
@@ -14,6 +14,7 @@ const Home = () => {
     // // Set the .env data as a variable for the API Key
     // const quotesAPI = dotenv.parsed.quotesAPI
 
+    const [quotes, setQuotes] = useState([])
 
     const quoteGen = () => {
 
@@ -34,12 +35,32 @@ const Home = () => {
 
     }
 
+    const getQuoteList = async () => {
+
+        try {
+            const quotesList = await axios.get("api/quotes")
+            setQuotes(quotesList.data)
+            console.log(quotesList.data)
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        getQuoteList()
+
+    }, [])
+
+
 
     return (
         <div>
             {/* <h1>Press Me for a quote!</h1> */}
             <button onClick={quoteGen}>Quote</button>
             {/* <API /> */}
+
+
             <Quotes />
         </div >
     )
