@@ -43,6 +43,17 @@ router.post("/quotes", async (req, res) => {
 
 })
 
+router.get("/externalquote", async (req, res) => {
+
+    try {
+        console.log("externalquote hit")
+
+    } catch (error) {
+        console.log(error)
+    }
+
+})
+
 // console.log(process.env.EPASS)
 
 // Transporter for emailing a new messasge to me!

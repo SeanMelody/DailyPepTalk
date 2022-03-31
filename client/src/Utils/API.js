@@ -8,7 +8,7 @@ const API = () => {
         url: 'https://quotes15.p.rapidapi.com/quotes/random/',
         headers: {
             'X-RapidAPI-Host': 'quotes15.p.rapidapi.com',
-            'X-RapidAPI-Key': 'e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21'
+
         }
     };
 
