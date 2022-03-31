@@ -1,16 +1,19 @@
 import React from 'react'
 
-const Quotes = () => {
+const Quotes = (props) => {
     return (
-        <div>
-            <div>Quote Title</div>
-            <hr></hr>
+        <div key={props.quote._id}>
             <div>
-                <p>Quote</p>
-                <p>Author</p>
+                <h2>Quote Description</h2>
+                <p>{props.quote.quote}</p>
+                <h3>
+                    {props.quote.author}
+                </h3>
+                <h5>{props.quote.submittedBy}</h5>
+                <p>{props.quote.tags}</p>
+
             </div>
-            <div>Quote Footer</div>
-            <p>Submitted by</p>
+
         </div>
     )
 }

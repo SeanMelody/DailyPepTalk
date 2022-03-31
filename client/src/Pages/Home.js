@@ -61,29 +61,17 @@ const Home = () => {
             {/* <API /> */}
 
 
-            <Quotes />
+            {/* <Quotes /> */}
 
             {quotes.length ? (
-                // Map through the quotes database
+                // Map through the quotes database displaying each as a Quotes Component
                 <div>
                     {quotes.map((quote) => (
 
-                        <div key={quote._id}>
-                            <div>
-                                <p>{quote.quote}</p>
-                                <h3>
-                                    {quote.author}
-                                </h3>
-                                <h5>{quote.submittedBy}</h5>
-                                <p>{quote.tags}</p>
-
-                            </div>
-
-                        </div>
-
+                        <Quotes quote={quote} />
 
                     ))}
-                    quotes
+
 
 
 
