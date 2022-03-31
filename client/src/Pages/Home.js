@@ -62,6 +62,41 @@ const Home = () => {
 
 
             <Quotes />
+
+            {quotes.length ? (
+                // Map through the quotes database
+                <div>
+                    {quotes.map((quote) => (
+
+                        <div key={quote._id}>
+                            <div>
+                                <p>{quote.quote}</p>
+                                <h3>
+                                    {quote.author}
+                                </h3>
+                                <h5>{quote.submittedBy}</h5>
+                                <p>{quote.tags}</p>
+
+                            </div>
+
+                        </div>
+
+
+                    ))}
+                    quotes
+
+
+
+                </div>
+            ) : (
+                <div>
+                    <p>Quotes not loading</p>
+                </div>
+            )
+            }
+
+
+
         </div >
     )
 }
