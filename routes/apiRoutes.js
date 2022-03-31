@@ -47,8 +47,8 @@ router.post("/quotes", async (req, res) => {
 router.get("/externalquote", async (req, res) => {
 
     try {
-        console.log("externalquote hit")
-        const getQuote = {
+        console.log("external quote hit")
+        const quoteParams = {
             method: 'GET',
             url: 'https://world-of-quotes.p.rapidapi.com/v1/quotes/quote-of-the-day',
             params: { category: 'inspirational' },
@@ -58,11 +58,8 @@ router.get("/externalquote", async (req, res) => {
             }
         };
 
-        await axios.request(getQuote).then(function (response) {
-            console.log(response.data);
-        }).catch(function (error) {
-            console.error(error);
-        });
+        const getQuote = await axios.request(quoteParams)
+        res.json(getQuote.data);
 
     } catch (error) {
         console.log(error)
