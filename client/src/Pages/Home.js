@@ -1,19 +1,9 @@
 import React, { useState, useEffect } from 'react'
-// import API from '../Utils/API';
 import axios from "axios"
 import Quotes from '../Components/Quotes';
 import ExternalQuote from './ExternalQuote';
 
 const Home = () => {
-
-    // // dotenv const to hide API key
-    // const dotenv = require('dotenv').config()
-    // // Check for errors
-    // if (dotenv.error) {
-    //     throw dotenv.error
-    // }
-    // // Set the .env data as a variable for the API Key
-    // const quotesAPI = dotenv.parsed.quotesAPI
 
     const [quotes, setQuotes] = useState([])
 
@@ -39,12 +29,7 @@ const Home = () => {
 
     return (
         <div>
-            {/* <h1>Press Me for a quote!</h1> */}
-            {/* <button onClick={quoteGen}>Quote</button> */}
-            {/* <API /> */}
-
-
-            {/* <Quotes /> */}
+            {/* External Quote Component to load quotes from RapidAPI */}
             <ExternalQuote />
 
             {quotes.length ? (
@@ -58,6 +43,7 @@ const Home = () => {
 
                 </div>
             ) : (
+                // Display if the Database is down, or route not working correctly
                 <div>
                     <p>Quotes not loading</p>
                 </div>
