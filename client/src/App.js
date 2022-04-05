@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <div>
+        <nav className="nav navbar nav-styles">
           <Link to="/">
             Home
           </Link>
@@ -19,7 +19,7 @@ function App() {
           <Link to="/addnew">
             Add
           </Link>
-        </div>
+        </nav>
         <Routes>
           <Route path="submit" element={<SubmitQuote />} />
           <Route path="addnew" element={<AddNew />} />

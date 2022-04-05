@@ -6,6 +6,17 @@
   margin: 50px;
 }
 
+.nav-styles {
+  background-color: #ffe4c4;
+  min-height: 50px;
+}
+
+.nav-styles a {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+
 .submit-quote {
 background: linear-gradient(lightblue, blue);
 height: 300px;
