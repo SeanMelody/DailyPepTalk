@@ -32,6 +32,7 @@ router.post("/quotes", async (req, res) => {
             quote: req.body.quote,
             submittedBy: req.body.submittedBy,
             email: req.body.email,
+            date: req.body.date,
             tags: req.body.tags
         })
         const successSave = await newQuote.save()

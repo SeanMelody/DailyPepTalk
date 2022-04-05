@@ -11,6 +11,7 @@ const Quotes = (props) => {
                 </h3>
                 <h5>{props.quote.submittedBy}</h5>
                 <p>{props.quote.tags}</p>
+                <p>{props.quote.date}</p>
 
             </div>
 
