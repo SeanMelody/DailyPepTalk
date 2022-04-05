@@ -13,21 +13,12 @@ const Home = () => {
         try {
             const quotesList = await axios.get("api/quotes")
 
-            const sortedQuotes = quotes.sort((a, b) => {
-                // If statement to sort a->z or z->a
-                if (b.name.first > a.name.first) {
-                    return -1
-                }
-                if (a.name.first > b.name.first) {
-                    return 1
-                }
-                return 0;
-            });
-
-            console.log(sortedQuotes)
+            // Reverse the list of quotes so the most recent shows up first
+            const sortedQuotes = quotesList.data.sort().reverse()
+            // console.log("sorted", sortedQuotes)
 
 
-            setQuotes(quotesList.data)
+            setQuotes(sortedQuotes)
             console.log(quotesList.data)
 
         } catch (error) {
