@@ -140,11 +140,16 @@ router.post("/submittedQuote", (req, res, next) => {
 })
 
 
-router.delete("/deletequote", (req, res) => {
+router.delete("/deletequote", async (req, res) => {
     // console.log("delete quote hit")
     try {
-        console.log("delete quote hit", req.body)
+        console.log("delete quote hit", req.body.source)
 
+        let deleteId = req.body.source._id
+
+        const deleteOne = await Quotes.deleteOne({_id: deleteId})
+        res.json(deleteOne.data)
+        console.log("successfully deleted")
 
 
     } catch (error) {

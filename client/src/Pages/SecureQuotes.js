@@ -32,6 +32,7 @@ const SecureQuotes = () => {
             const deleteAQuote = await axios.delete("api/deletequote", { data: { source: quote } })
             // axios.delete("api/deletequote")
             // console.log(deleteAQuote.data)
+            window.location.reload()
 
 
         } catch (error) {
