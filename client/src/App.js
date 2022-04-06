@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import Home from './Pages/Home';
 import SubmitQuote from './Pages/SubmitQuote';
 import AddNew from './Pages/AddNew'
+import SecureQuotes from './Pages/SecureQuotes';
 
 
 function App() {
@@ -19,10 +20,14 @@ function App() {
           <Link to="/addnew">
             Add
           </Link>
+          <Link to="/securequotes">
+            Secure Quotes
+          </Link>
         </nav>
         <Routes>
           <Route path="submit" element={<SubmitQuote />} />
           <Route path="addnew" element={<AddNew />} />
+          <Route path="securequotes" element={<SecureQuotes />} />
           <Route path="/" element={<Home />} />
         </Routes>
 
