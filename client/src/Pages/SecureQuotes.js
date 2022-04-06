@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
+
 const SecureQuotes = () => {
 
     const [secureQuotes, setSecureQuotes] = useState([])
@@ -23,9 +24,19 @@ const SecureQuotes = () => {
         }
     }
 
-    const deleteQuote = (quote) => {
+    const deleteQuote = async (quote) => {
 
         console.log(quote)
+
+        try {
+            const deleteAQuote = await axios.delete("api/deletequote", { data: { source: quote } })
+            // axios.delete("api/deletequote")
+            // console.log(deleteAQuote.data)
+
+
+        } catch (error) {
+            console.log(error)
+        }
 
     }
 

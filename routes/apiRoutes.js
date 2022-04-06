@@ -139,4 +139,17 @@ router.post("/submittedQuote", (req, res, next) => {
 
 })
 
+
+router.delete("/deletequote", (req, res) => {
+    // console.log("delete quote hit")
+    try {
+        console.log("delete quote hit", req.body)
+
+
+
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 module.exports = router;
