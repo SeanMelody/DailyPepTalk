@@ -61,7 +61,7 @@ const SecureQuotes = () => {
                                 <h5>{quote.submittedBy}</h5>
                                 <p>{quote.tags}</p>
                                 <p>{quote.date}</p>
-                                <button onClick={deleteQuote}>Delete Quote</button>
+                                <button onClick={() => deleteQuote(quote)}>Delete Quote</button>
 
                             </div>
 
