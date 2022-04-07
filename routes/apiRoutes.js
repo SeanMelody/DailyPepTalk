@@ -1,3 +1,4 @@
+const User = require("../models/userModels")
 const router = require("express").Router();
 const nodemailer = require("nodemailer")
 const Quotes = require("../models/quoteModels")
@@ -8,6 +9,7 @@ require("dotenv").config();
 router.get("/test", (req, res) => {
     res.send("test route")
 })
+
 
 // Route to get all the quotes from the Mongoose Database
 router.get("/quotes", async (req, res) => {
@@ -147,7 +149,7 @@ router.delete("/deletequote", async (req, res) => {
 
         let deleteId = req.body.source._id
 
-        const deleteOne = await Quotes.deleteOne({_id: deleteId})
+        const deleteOne = await Quotes.deleteOne({ _id: deleteId })
         res.json(deleteOne.data)
         console.log("successfully deleted")
 
