@@ -67,14 +67,14 @@ module.exports = {
                 from: process.env.EMAIL,
                 to: newUser.email,
                 subject: "Please confirm your email for My Reading List!",
-                text: `Click the link to confirm  your account! http://localhost:3000/confirm_token${confirmationToken.token}`,
+                text: `Click the link to confirm  your account! http://localhost:3000/confirm_token:${confirmationToken.token}`,
             }
 
             transporter.sendMail(mailOptions, (err, info) => {
                 if (err) {
                     console.log(err)
                 } else {
-                    console.log(`Confirm email was sent with: http://localhost:3000/confirm_token${confirmationToken.token} for authorId ${newUser._id}`)
+                    console.log(`Confirm email was sent with: http://localhost:3000/confirm_token:${confirmationToken.token} for authorId ${newUser._id}`)
                 }
             })
             await confirmationToken.save()
