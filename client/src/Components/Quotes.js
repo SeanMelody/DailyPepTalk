@@ -2,11 +2,11 @@ import React from 'react'
 
 const Quotes = (props) => {
     return (
-        <>
-            <hr></hr>
-            <div key={props.quote._id}>
-                <div>
-                    <h2>Quote Description</h2>
+        <div div className="container">
+            <hr className="hrs"></hr>
+            <div key={props.quote._id} className="row justify-content-center">
+                <div className="card col-md-6">
+                    {/* <h2>Quote Description</h2> */}
                     <p>{props.quote.quote}</p>
                     <h3>
                         {props.quote.author}
@@ -18,7 +18,7 @@ const Quotes = (props) => {
                 </div>
 
             </div>
-        </>
+        </div>
     )
 }
 
