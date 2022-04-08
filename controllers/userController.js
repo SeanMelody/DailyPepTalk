@@ -57,14 +57,14 @@ module.exports = {
             const transporter = nodemailer.createTransport({
                 service: "gmail",
                 auth: {
-                    user: "dzesean@gmail.com",
-                    pass: process.env.EMAILPASS,
+                    user: process.env.EMAIL,
+                    pass: process.env.EPASS,
                 },
             })
 
 
             const mailOptions = {
-                from: "dzesean@gmail.com",
+                from: process.env.EMAIL,
                 to: newUser.email,
                 subject: "Please confirm your email for My Reading List!",
                 text: `Click the link to confirm  your account! http://localhost:3000/confirm_token${confirmationToken.token}`,

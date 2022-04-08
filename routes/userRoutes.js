@@ -2,12 +2,6 @@ const router = require("express").Router();
 const auth = require("../middleware/auth");
 const { register, login, getUser, deleteUser } = require("../controllers/userController");
 
-
-// Test route unused later
-router.get("/test", (req, res) => {
-    res.send("test route")
-})
-
 // Get route to get the user
 router.get("/", auth, getUser)
 
