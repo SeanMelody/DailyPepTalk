@@ -4,6 +4,7 @@ import Home from './Pages/Home';
 import SubmitQuote from './Pages/SubmitQuote';
 import AddNew from './Pages/AddNew'
 import SecureQuotes from './Pages/SecureQuotes';
+import Login from './Pages/Login';
 
 
 function App() {
@@ -23,11 +24,15 @@ function App() {
           <Link to="/securequotes">
             Secure Quotes
           </Link>
+          <Link to="/login">
+            Login
+          </Link>
         </nav>
         <Routes>
           <Route path="submit" element={<SubmitQuote />} />
           <Route path="addnew" element={<AddNew />} />
           <Route path="securequotes" element={<SecureQuotes />} />
+          <Route path="login" element={<Login />} />
           <Route path="/" element={<Home />} />
         </Routes>
 

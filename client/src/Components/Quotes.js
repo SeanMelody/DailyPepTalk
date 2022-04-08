@@ -2,7 +2,7 @@ import React from 'react'
 
 const Quotes = (props) => {
     return (
-        <div div className="container">
+        <div className="container">
             <hr className="hrs"></hr>
             <div key={props.quote._id} className="row justify-content-center">
                 <div className="card col-md-6">
