@@ -10,7 +10,6 @@ router.get("/test", (req, res) => {
     res.send("test route")
 })
 
-
 // Route to get all the quotes from the Mongoose Database
 router.get("/quotes", async (req, res) => {
     console.log("quotes hit")

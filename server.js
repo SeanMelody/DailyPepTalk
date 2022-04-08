@@ -19,6 +19,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use("/api", require("./routes/apiRoutes"))
+app.use("/users", require("./routes/userRoutes"))
 
 app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
