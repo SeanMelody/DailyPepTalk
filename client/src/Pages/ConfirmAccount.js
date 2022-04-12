@@ -10,11 +10,13 @@ const ConfirmAccount = (props) => {
     useEffect(() => {
         // Ify async statement to use try catch
         (async () => {
+            console.log("ify in useEffect")
             try {
                 await axios.post("/register", { token: props.match.params.token })
                 // history.push("/");
                 console.log("props.match.params.token", props.match.params.token)
             } catch (err) {
+                console.log("error in useEffect")
                 console.log(err)
             }
         })();

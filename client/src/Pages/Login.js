@@ -23,7 +23,7 @@ const Login = () => {
             console.log(data)
 
             if (!data.user.confirmed) {
-
+                navigate("/confirm")
                 console.log("not confirmed")
             } else {
                 console.log("confirmed")
