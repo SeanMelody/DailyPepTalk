@@ -47,7 +47,7 @@ module.exports = {
                 token: crypto.randomBytes(10).toString("hex"),
                 authorId: newUser._id,
             })
-            // console.log(newUser._id)
+            console.log(newUser._id)
             // console.log(confirmationToken.authorId)
 
             // Transporter for emailing confirmation link!

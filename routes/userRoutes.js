@@ -1,15 +1,12 @@
 const router = require("express").Router();
 const auth = require("../middleware/auth");
-const { register, login, getUser, deleteUser } = require("../controllers/userController");
+const { register, login, getUser } = require("../controllers/userController");
 
 // Get route to get the user
 router.get("/", auth, getUser)
 
 // Post a new user to the database at users/register
 router.post("/register", register)
-
-// router/delete to delete the user
-router.delete("/", auth, deleteUser)
 
 // users/login to get the user
 router.post("/login", login)

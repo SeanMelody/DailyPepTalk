@@ -67,15 +67,16 @@ function App() {
           :
           <>
             <nav className="navbar">
-              <h3 className="margin10">My Reading List</h3>
+              <h3 className="margin10">Admin Quotes</h3>
               <Link to="/">
-                <button className="btn btn-outline-dark margin10">{userData.user.displayName}'s List</button>
+                <button className="btn btn-outline-dark margin10">Home</button>
               </Link>
-              <Link to="/search">
-                <button className="btn btn-outline-dark margin10">Search For a Book</button>
+              <Link to="/securequotes">
+                <button className="btn btn-outline-dark margin10">All Quotes</button>
               </Link>
-
-              <button className="btn btn btn-outline-danger margin10">Logout</button>
+              <Link to="/addnew">
+                <button className="btn btn-outline-dark margin10">Add a New Quote</button>
+              </Link>
             </nav>
 
           </>
