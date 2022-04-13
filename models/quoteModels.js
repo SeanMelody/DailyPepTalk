@@ -25,6 +25,10 @@ const quotesSchema = new mongoose.Schema({
     tags: {
         type: [String],
         required: false
+    },
+    authorId: {
+        type: String,
+        // required: true,
     }
 
 });

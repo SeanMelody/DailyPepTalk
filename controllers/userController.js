@@ -130,16 +130,19 @@ module.exports = {
 
 
     getUser: async (req, res) => {
+        console.log("getuser", req.user)
         try {
-            const user = await User.findById(req.user)
-
+            // const user = await User.findById(req.user)
+            const user = await User.findOne({ _id: req.user })
+            console.log("getuser", user)
             res.json({
                 displayName: user.displayName,
                 id: user._id,
                 email: user.email
             })
         } catch (err) {
-            res.send("getUser", err.response)
+            // res.send("getUser", err.response)
+            res.status(err).send(err)
         }
     },
 
