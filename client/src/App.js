@@ -20,6 +20,8 @@ function App() {
     token: undefined
   })
 
+  // const navigate = useNavigate()
+
   const checkLoggedIn = async () => {
     let token = localStorage.getItem("auth-token")
 
@@ -38,6 +40,14 @@ function App() {
         console.log("User must log in")
       }
     }
+
+  }
+
+  const logout = () => {
+    setUserData({ token: undefined, user: undefined })
+    localStorage.setItem("auth-token", "")
+    // navigate("/")
+    checkLoggedIn()
 
   }
 
@@ -77,6 +87,7 @@ function App() {
               <Link to="/addnew">
                 <button className="btn btn-outline-dark margin10">Add a New Quote</button>
               </Link>
+              <button onClick={logout} className="btn btn btn-outline-danger margin10">Logout</button>
             </nav>
 
           </>
