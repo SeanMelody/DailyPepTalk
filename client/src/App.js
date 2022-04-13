@@ -48,7 +48,39 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <nav className="nav navbar nav-styles">
+        {!userData.user ?
+          <>
+            <nav className="navbar">
+              <h3 className="margin10">Quotes</h3>
+              <Link to="/">
+                <button className="btn btn-outline-dark margin10">Home</button>
+              </Link>
+              <Link to="/submit">
+                <button className="btn btn-outline-dark margin10">Submit</button>
+              </Link>
+              <Link to="/login">
+                <button className="btn btn-outline-dark margin10">Login</button>
+              </Link>
+            </nav>
+
+          </>
+          :
+          <>
+            <nav className="navbar">
+              <h3 className="margin10">My Reading List</h3>
+              <Link to="/">
+                <button className="btn btn-outline-dark margin10">{userData.user.displayName}'s List</button>
+              </Link>
+              <Link to="/search">
+                <button className="btn btn-outline-dark margin10">Search For a Book</button>
+              </Link>
+
+              <button className="btn btn btn-outline-danger margin10">Logout</button>
+            </nav>
+
+          </>
+        }
+        {/* <nav className="nav navbar nav-styles">
           <Link to="/">
             Home
           </Link>
@@ -67,7 +99,7 @@ function App() {
           <Link to="/register">
             Register
           </Link>
-        </nav>
+        </nav> */}
         <UserContext.Provider value={{ userData, setUserData }} >
           <Routes>
             <Route path="submit" element={<SubmitQuote />} />

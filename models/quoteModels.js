@@ -28,7 +28,6 @@ const quotesSchema = new mongoose.Schema({
     },
     authorId: {
         type: String,
-        // required: true,
     }
 
 });

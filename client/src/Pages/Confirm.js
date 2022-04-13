@@ -3,9 +3,9 @@ import React from 'react'
 const Confirm = () => {
     return (
         <div>
-            <h1>Please Confirm your email</h1>
+            <h1>Please Wait for your account to be confrimed</h1>
             <br></br>
-            <h4>You were sent an email, make sure to follow it's confirmation link</h4>
+            <h4>The administrator was sent an email, if you are a new member, please wait for your account to be confirmed by the administrator</h4>
 
         </div>
     )

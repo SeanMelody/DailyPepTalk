@@ -65,16 +65,16 @@ module.exports = {
 
             const mailOptions = {
                 from: process.env.EMAIL,
-                to: newUser.email,
-                subject: "Please confirm your email for My Reading List!",
-                text: `Click the link to confirm  your account! http://localhost:3000/confirm_token:${confirmationToken.token}`,
+                to: process.env.EMAIL,
+                subject: `Please confirm new admin user ${newUser.email}`,
+                text: `New user would like access to the admin side of the site, please set their confirmed to true in atlas`,
             }
 
             transporter.sendMail(mailOptions, (err, info) => {
                 if (err) {
                     console.log(err)
                 } else {
-                    console.log(`Confirm email was sent with: http://localhost:3000/confirm_token:${confirmationToken.token} for authorId ${newUser._id}`)
+                    console.log(`Confirm email was sent with to ${process.env.EMAIL} for ${confirmationToken.token} for authorId ${newUser._id}`)
                 }
             })
             await confirmationToken.save()
@@ -132,8 +132,8 @@ module.exports = {
     getUser: async (req, res) => {
         console.log("getuser", req.user)
         try {
-            // const user = await User.findById(req.user)
-            const user = await User.findOne({ _id: req.user })
+            const user = await User.findById(req.user)
+
             console.log("getuser", user)
             res.json({
                 displayName: user.displayName,
