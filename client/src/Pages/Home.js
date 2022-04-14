@@ -7,6 +7,7 @@ const Home = () => {
 
     const [quotes, setQuotes] = useState([])
 
+
     const getQuoteList = async () => {
 
         try {
@@ -25,11 +26,11 @@ const Home = () => {
         }
     }
 
-
     useEffect(() => {
         getQuoteList()
 
     }, [])
+
 
 
     return (

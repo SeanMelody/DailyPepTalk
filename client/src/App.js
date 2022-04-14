@@ -92,26 +92,7 @@ function App() {
 
           </>
         }
-        {/* <nav className="nav navbar nav-styles">
-          <Link to="/">
-            Home
-          </Link>
-          <Link to="/submit">
-            Submit A Quote
-          </Link>
-          <Link to="/addnew">
-            Add
-          </Link>
-          <Link to="/securequotes">
-            Secure Quotes
-          </Link>
-          <Link to="/login">
-            Login
-          </Link>
-          <Link to="/register">
-            Register
-          </Link>
-        </nav> */}
+
         <UserContext.Provider value={{ userData, setUserData }} >
           <Routes>
             <Route path="submit" element={<SubmitQuote />} />

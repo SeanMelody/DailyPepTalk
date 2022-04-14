@@ -1,10 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import userContext from "../Context/UserContext"
+import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 
 
 const SecureQuotes = () => {
 
     const [secureQuotes, setSecureQuotes] = useState([])
+
+    const { userData } = useContext(userContext)
+
+    const navigate = useNavigate()
 
     const getSecureQuoteList = async () => {
 
@@ -40,6 +46,19 @@ const SecureQuotes = () => {
         }
 
     }
+
+    useEffect(() => {
+        if (!userData.user) {
+            navigate("/")
+        }
+
+        // console.log(userData.user)
+
+        userData.user
+            ? console.log(userData.user.displayName)
+            : console.log("User Loading")
+
+    }, [userData.user, navigate])
 
 
 

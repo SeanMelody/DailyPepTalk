@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import userContext from "../Context/UserContext"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 
 const AddNew = () => {
 
     const navigate = useNavigate()
+
+    const { userData } = useContext(userContext)
 
 
     //use onSubmit to set state
@@ -34,12 +37,21 @@ const AddNew = () => {
         }
     }
 
-    // useEffect(() => {
-    //     const password = prompt("Whats the password")
+
+    useEffect(() => {
+        if (!userData.user) {
+            navigate("/")
+        }
+
+        // console.log(userData.user)
+
+        userData.user
+            ? console.log(userData.user.displayName)
+            : console.log("User Loading")
+
+    }, [userData.user, navigate])
 
 
-    //     if (password !== "7777") navigate("/")
-    // }, [navigate])
 
     return (
         <div className="submit-quote space-large">Add Quote

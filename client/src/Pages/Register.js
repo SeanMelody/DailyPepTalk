@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 
@@ -26,6 +26,13 @@ const Register = () => {
             console.log(err.response)
         }
     }
+
+    useEffect(() => {
+        const password = prompt("Whats the password")
+
+
+        if (password !== "7777") navigate("/")
+    }, [navigate])
 
     return (
         <div>
