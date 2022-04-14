@@ -77,23 +77,24 @@ const SecureQuotes = () => {
 
             {secureQuotes.length ? (
                 // Map through the quotes database displaying each as a Quotes Component
-                <div>
+                <div className="container">
                     {secureQuotes.map((quote) => (
 
 
-                        <div key={quote._id}>
-                            <hr></hr>
-                            <div>
-                                <h2>Quote Description</h2>
-                                <p>{quote.quote}</p>
-                                <h3>
-                                    {quote.author}
-                                </h3>
-                                <h5>{quote.submittedBy}</h5>
-                                <p>{quote.tags}</p>
-                                <p>{quote.date}</p>
-                                <button onClick={() => deleteQuote(quote)}>Delete Quote</button>
-
+                        <div>
+                            <hr className="hrs"></hr>
+                            <div className="row justify-content-center">
+                                <div className="card col-md-6 padding-medium">
+                                    <h2>Quote Description</h2>
+                                    <p>{quote.quote}</p>
+                                    <h3>
+                                        {quote.author}
+                                    </h3>
+                                    <h5>{quote.submittedBy}</h5>
+                                    <p>{quote.tags}</p>
+                                    <p>{quote.date}</p>
+                                    <button onClick={() => deleteQuote(quote)} className="btn btn-danger" >Delete Quote</button>
+                                </div>
                             </div>
 
                         </div>
