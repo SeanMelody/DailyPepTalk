@@ -82,7 +82,7 @@ function App() {
                 <button className="btn btn-outline-dark margin10">Home</button>
               </Link>
               <Link to="/securequotes">
-                <button className="btn btn-outline-dark margin10">All Quotes</button>
+                <button className="btn btn-outline-dark margin10">Secure Quotes</button>
               </Link>
               <Link to="/addnew">
                 <button className="btn btn-outline-dark margin10">Add a New Quote</button>
