@@ -11,6 +11,7 @@ import Confirm from './Pages/Confirm';
 import ConfirmAccount from './Pages/ConfirmAccount';
 import UserContext from './Context/UserContext'
 import axios from 'axios'
+import NotFound from './Pages/NotFound';
 
 
 function App() {
@@ -93,6 +94,7 @@ function App() {
 
         <UserContext.Provider value={{ userData, setUserData }} >
           <Routes>
+            <Route path="*" element={<NotFound />} />
             <Route path="submit" element={<SubmitQuote />} />
             <Route path="addnew" element={<AddNew />} />
             <Route path="securequotes" element={<SecureQuotes />} />
@@ -100,7 +102,7 @@ function App() {
             <Route path="register" element={<Register />} />
             <Route path="confirm" element={<Confirm />} />
             <Route path="confirm_token:token" element={<ConfirmAccount />} user={userData} />
-            <Route path="/" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
           </Routes>
         </UserContext.Provider>
       </Router>
