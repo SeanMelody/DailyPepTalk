@@ -81,7 +81,7 @@ const SecureQuotes = () => {
                     {secureQuotes.map((quote) => (
 
 
-                        <div>
+                        <div key={quote._id}>
                             <hr className="hrs"></hr>
                             <div className="row justify-content-center">
                                 <div className="card col-md-6 padding-medium">

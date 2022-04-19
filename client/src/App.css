@@ -29,6 +29,11 @@
   font-size: 30px;
 }
 
+.link-design {
+  text-decoration: none;
+  color: black;
+}
+
 .submit-quote {
   background: linear-gradient(lightblue, blue);
   height: 300px;

@@ -61,15 +61,14 @@ function App() {
         {!userData.user ?
           <>
             <nav className="navbar">
-              <h3 className="margin10">Quotes</h3>
               <Link to="/">
-                <button className="btn btn-outline-dark margin10">Home</button>
+                <h3 className="margin10 link-design">Quotes</h3>
               </Link>
               <Link to="/submit">
-                <button className="btn btn-outline-dark margin10">Submit</button>
+                <button className="btn btn-outline-dark margin10">Submit A Quote</button>
               </Link>
               <Link to="/login">
-                <button className="btn btn-outline-dark margin10">Login</button>
+                <button className="btn btn-outline-dark margin10">Admin Login</button>
               </Link>
             </nav>
 
@@ -77,12 +76,11 @@ function App() {
           :
           <>
             <nav className="navbar">
-              <h3 className="margin10">Admin Quotes</h3>
               <Link to="/">
-                <button className="btn btn-outline-dark margin10">Home</button>
+                <h3 className="margin10 link-design">Welcome {userData.user.displayName}</h3>
               </Link>
               <Link to="/securequotes">
-                <button className="btn btn-outline-dark margin10">Secure Quotes</button>
+                <button className="btn btn-outline-dark margin10">Edit / Delete Quotes</button>
               </Link>
               <Link to="/addnew">
                 <button className="btn btn-outline-dark margin10">Add a New Quote</button>
