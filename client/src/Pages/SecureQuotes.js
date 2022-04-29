@@ -137,26 +137,25 @@ const SecureQuotes = () => {
                                                 type="text"
                                                 name="quote"
                                                 id="quote"
-                                                placeholder="quote"
+                                                defaultValue={quote.quote}
                                                 onChange={onChange}></textarea>
                                             <input type="text"
                                                 name="author"
                                                 id="author"
-                                                placeholder="author"
+                                                placeholder={quote.author}
                                                 onChange={onChange}></input>
                                             <input type="text"
                                                 name="submittedBy"
                                                 id="submittedBy"
-                                                placeholder="Your Name"
+                                                placeholder={quote.submittedBy}
                                                 onChange={onChange}></input>
                                             <input type="text"
                                                 name="tags"
                                                 id="tags"
-                                                placeholder="Tags"
+                                                placeholder={quote.tags}
                                                 onChange={onChange}></input>
-                                            <button>Submit</button>
+                                            <button onClick={() => editAQuote(quote)} className="btn btn-danger" >Edit Quote</button>
                                         </form>
-                                        <button onClick={() => editAQuote(quote)} className="btn btn-danger" >Edit Quote</button>
                                     </div>
                                 </div>
                             </div>
