@@ -38,3 +38,13 @@
   background: linear-gradient(lightblue, blue);
   height: 300px;
 }
+
+.footer {
+  position: bottom;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-top: 1px solid black;
+  padding-top: 20px;
+
+}
