@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from "axios"
 import Quotes from '../Components/Quotes';
 import ExternalQuote from './ExternalQuote';
+import Footer from '../Components/Footer'
 
 const Home = () => {
 
@@ -57,7 +58,7 @@ const Home = () => {
             }
 
 
-
+            <Footer />
         </div >
     )
 }
