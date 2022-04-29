@@ -12,6 +12,19 @@ const SecureQuotes = () => {
 
     const navigate = useNavigate()
 
+    //use onSubmit to set state
+    const [editQuote, setEditQuote] = useState({
+        quote: "",
+        author: "",
+        submittedBy: "",
+        email: "",
+        tags: [],
+    })
+    // Set the change for state
+    const onChange = (e) => {
+        setEditQuote({ ...editQuote, [e.target.name]: e.target.value })
+    }
+
     const getSecureQuoteList = async () => {
 
         try {
@@ -45,6 +58,25 @@ const SecureQuotes = () => {
             console.log(error)
         }
 
+    }
+
+    const edit = (e) => {
+        e.preventDefault();
+        console.log(editQuote)
+        // try {
+        //     axios.post("/api/submittedQuote", submitQuote)
+        //         .then((data) => {
+        //             console.log(data)
+        //         })
+        //     console.log("submitted successfully")
+        // } catch (error) {
+        //     console.log(error)
+        // }
+    }
+
+    const editAQuote = async (quote) => {
+
+        console.log(quote)
     }
 
     useEffect(() => {
@@ -94,6 +126,38 @@ const SecureQuotes = () => {
                                     <p>{quote.tags}</p>
                                     <p>{quote.date}</p>
                                     <button onClick={() => deleteQuote(quote)} className="btn btn-danger" >Delete Quote</button>
+
+
+                                    <hr></hr>
+
+                                    <div>
+                                        <h6>Edit Quote</h6>
+                                        <form onSubmit={edit}>
+                                            <textarea
+                                                type="text"
+                                                name="quote"
+                                                id="quote"
+                                                placeholder="quote"
+                                                onChange={onChange}></textarea>
+                                            <input type="text"
+                                                name="author"
+                                                id="author"
+                                                placeholder="author"
+                                                onChange={onChange}></input>
+                                            <input type="text"
+                                                name="submittedBy"
+                                                id="submittedBy"
+                                                placeholder="Your Name"
+                                                onChange={onChange}></input>
+                                            <input type="text"
+                                                name="tags"
+                                                id="tags"
+                                                placeholder="Tags"
+                                                onChange={onChange}></input>
+                                            <button>Submit</button>
+                                        </form>
+                                        <button onClick={() => editAQuote(quote)} className="btn btn-danger" >Edit Quote</button>
+                                    </div>
                                 </div>
                             </div>
 
@@ -116,7 +180,7 @@ const SecureQuotes = () => {
 
 
 
-        </div>
+        </div >
     )
 }
 
