@@ -117,14 +117,15 @@ const SecureQuotes = () => {
                             <hr className="hrs"></hr>
                             <div className="row justify-content-center">
                                 <div className="card col-md-6 padding-medium">
-                                    <h2>Quote Description</h2>
                                     <p>{quote.quote}</p>
-                                    <h3>
-                                        {quote.author}
-                                    </h3>
-                                    <h5>{quote.submittedBy}</h5>
-                                    <p>{quote.tags}</p>
-                                    <p>{quote.date}</p>
+                                    <h4>
+                                        Author: {quote.author}
+                                    </h4>
+                                    <h5>
+                                        Submitted By: {quote.submittedBy}
+                                    </h5>
+                                    <p>Tags: {quote.tags}</p>
+                                    <p>Date: {quote.date}</p>
                                     <button onClick={() => deleteQuote(quote)} className="btn btn-danger" >Delete Quote</button>
 
 
@@ -179,7 +180,7 @@ const SecureQuotes = () => {
 
 
 
-        </div >
+        </div>
     )
 }
 

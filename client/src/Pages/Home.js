@@ -41,7 +41,7 @@ const Home = () => {
 
             {quotes.length ? (
                 // Map through the quotes database displaying each as a Quotes Component
-                <div>
+                <div className="container">
                     {quotes.map((quote) => (
 
                         <Quotes quote={quote} key={Math.random()} />
