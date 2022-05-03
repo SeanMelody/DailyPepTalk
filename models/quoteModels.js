@@ -10,7 +10,7 @@ const quotesSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    from: {
+    submittedBy: {
         type: String
     },
     email: {
