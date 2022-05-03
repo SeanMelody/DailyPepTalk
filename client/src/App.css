@@ -12,6 +12,10 @@
   padding: 20px;
 }
 
+.margin-small {
+  margin: 10px;
+}
+
 .hrs {
   width: 80%;
   margin-top: 50px;
@@ -39,8 +43,7 @@
 }
 
 .submit-quote {
-  background: linear-gradient(lightblue, blue);
-  height: 300px;
+  background-color: antiquewhite;
 }
 
 .footer {

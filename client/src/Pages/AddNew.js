@@ -54,30 +54,54 @@ const AddNew = () => {
 
 
     return (
-        <div className="submit-quote space-large">Add Quote
-            <form onSubmit={submit}>
-                <textarea
-                    type="text"
-                    name="quote"
-                    id="quote"
-                    placeholder="quote"
-                    onChange={onChange}></textarea>
-                <input type="text"
-                    name="author"
-                    id="author"
-                    placeholder="author"
-                    onChange={onChange}></input>
-                <input type="text"
-                    name="submittedBy"
-                    id="submittedBy"
-                    placeholder="Your Name"
-                    onChange={onChange}></input>
-                <input type="text"
-                    name="tags"
-                    id="tags"
-                    placeholder="Tags"
-                    onChange={onChange}></input>
-                <button>Submit</button>
+        <div className="submit-quote space-large container">
+            <h3>Add Quote</h3>
+            <form onSubmit={submit} className="justify-content-center padding-medium">
+                <div className="row">
+                    <textarea
+                        className="form-control margin-small"
+                        rows="3"
+                        type="text"
+                        name="quote"
+                        id="quote"
+                        placeholder="quote"
+                        onChange={onChange}></textarea>
+                </div>
+                <div className="row">
+                    <input type="text"
+                        className="form-control margin-small"
+                        name="author"
+                        id="author"
+                        placeholder="author"
+                        onChange={onChange}></input>
+                </div>
+                <div className="row">
+                    <input type="text"
+                        className="form-control margin-small"
+                        name="submittedBy"
+                        id="submittedBy"
+                        placeholder="Your Name"
+                        onChange={onChange}></input>
+                </div>
+                <div className="row">
+                    <select type="text"
+                        className="form-control margin-small"
+                        name="tags"
+                        id="tags"
+                        placeholder="Tags"
+                        onChange={onChange}>
+                        <option>--Select a Tag--</option>
+                        <option>Inspirational</option>
+                        <option>Success</option>
+                        <option>Positive</option>
+                        <option>Confident</option>
+                        <option>Believe</option>
+                        <option>Self-Esteem</option>
+                    </select>
+                </div>
+                <div className="row">
+                    <button className="btn btn-primary">Submit</button>
+                </div>
             </form>
 
 
