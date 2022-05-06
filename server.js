@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // For Authenticaion
-app.use(session({ secret: JWT_SECRET }));
+// app.use(session({ secret: JWT_SECRET }));
 
 // Heroku Optimization
 if (process.env.NODE_ENV === "production") {
