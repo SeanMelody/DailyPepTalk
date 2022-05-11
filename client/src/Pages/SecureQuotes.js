@@ -134,28 +134,45 @@ const SecureQuotes = () => {
                                     <div>
                                         <h6>Edit Quote</h6>
                                         <form onSubmit={edit}>
-                                            <textarea
-                                                type="text"
-                                                name="quote"
-                                                id="quote"
-                                                defaultValue={quote.quote}
-                                                onChange={onChange}></textarea>
-                                            <input type="text"
-                                                name="author"
-                                                id="author"
-                                                placeholder={quote.author}
-                                                onChange={onChange}></input>
-                                            <input type="text"
-                                                name="submittedBy"
-                                                id="submittedBy"
-                                                placeholder={quote.submittedBy}
-                                                onChange={onChange}></input>
-                                            <input type="text"
-                                                name="tags"
-                                                id="tags"
-                                                placeholder={quote.tags}
-                                                onChange={onChange}></input>
-                                            <button onClick={() => editAQuote(quote)} className="btn btn-danger" >Edit Quote</button>
+
+                                            <div className="row justify-content-center">
+                                                <textarea
+                                                    type="text"
+                                                    name="quote"
+                                                    id="quote"
+                                                    defaultValue={quote.quote}
+                                                    onChange={onChange}
+                                                    className="col-md-12 margin-small">
+                                                </textarea>
+                                            </div>
+                                            <div className="row justify-content-center">
+                                                <input type="text"
+                                                    name="author"
+                                                    id="author"
+                                                    placeholder={quote.author}
+                                                    onChange={onChange}
+                                                    className="col-md-6 margin-small"></input>
+                                            </div>
+                                            <div className="row justify-content-center">
+                                                <input type="text"
+                                                    name="submittedBy"
+                                                    id="submittedBy"
+                                                    placeholder={quote.submittedBy}
+                                                    onChange={onChange}
+                                                    className="col-md-6 margin-small"></input>
+                                            </div>
+                                            <div className="row justify-content-center">
+                                                <input type="text"
+                                                    name="tags"
+                                                    id="tags"
+                                                    placeholder={quote.tags}
+                                                    onChange={onChange}
+                                                    className="col-md-6 margin-small"></input>
+                                            </div>
+                                            <div className="row justify-content-center">
+                                                <button onClick={() => editAQuote(quote)} className="btn btn-danger col-md-6 margin-small" >Edit Quote</button>
+                                            </div>
+
                                         </form>
                                     </div>
                                 </div>
