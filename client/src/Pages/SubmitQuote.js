@@ -32,7 +32,7 @@ const SubmitQuote = () => {
     }
 
     return (
-        <div className="submit-quote space-large container">
+        <div className="submit-quote container">
             <h3>Submit Quote</h3>
             <form onSubmit={submit} className="justify-content-center padding-medium">
                 <div className="row">
@@ -87,7 +87,9 @@ const SubmitQuote = () => {
 
                 </div>
                 <div className="row">
-                    <button className="btn btn-primary">Submit</button>
+                    <div className="col-md-12">
+                        <button className="btn btn-primary">Submit</button>
+                    </div>
                 </div>
             </form>
 
