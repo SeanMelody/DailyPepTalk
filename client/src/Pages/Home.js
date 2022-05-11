@@ -44,7 +44,7 @@ const Home = () => {
                 <div className="container">
                     {quotes.map((quote) => (
 
-                        <Quotes quote={quote} key={Math.random()} />
+                        <Quotes quote={quote} key={quote._id} />
 
                     ))}
 

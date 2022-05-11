@@ -18,7 +18,7 @@
 
 .hrs {
   width: 80%;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 
@@ -33,13 +33,24 @@
   font-size: 30px;
 }
 
+.quote-style {
+  padding-top: 20px;
+}
+
+.quote-border {
+  border: 1px solid black;
+}
+
 .link-design {
   text-decoration: none;
   color: black;
 }
 
 .color {
-  background-color: #f0ead6;
+  background: radial-gradient(#f8f4e9, #faf0e3);
+  /* background-color: #f0ead6; */
+  border-radius: 75px;
+  margin: 50px
 }
 
 .submit-quote {
