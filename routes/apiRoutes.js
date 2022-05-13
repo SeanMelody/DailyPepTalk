@@ -158,4 +158,21 @@ router.delete("/deletequote", async (req, res) => {
     }
 })
 
+router.delete("/editquote", async (req, res) => {
+    // console.log("delete quote hit")
+    try {
+        console.log("edit quote hit", req.body.source)
+
+        // let deleteId = req.body.source._id
+
+        // const deleteOne = await Quotes.deleteOne({ _id: deleteId })
+        // res.json(deleteOne.data)
+        // console.log("successfully deleted")
+
+
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 module.exports = router;

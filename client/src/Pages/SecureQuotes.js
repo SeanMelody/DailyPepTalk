@@ -60,24 +60,26 @@ const SecureQuotes = () => {
 
     }
 
-    const edit = (e) => {
-        e.preventDefault();
+    const edit = async (quote) => {
+        // e.preventDefault();
         console.log(editQuote)
-        // try {
-        //     axios.post("/api/submittedQuote", submitQuote)
-        //         .then((data) => {
-        //             console.log(data)
-        //         })
-        //     console.log("submitted successfully")
-        // } catch (error) {
-        //     console.log(error)
-        // }
+        console.log()
+
+        try {
+            axios.post("/api/editquote", { data: { source: editQuote } })
+                .then((data) => {
+                    console.log(data)
+                })
+            console.log("edited successfully")
+        } catch (error) {
+            console.log(error)
+        }
     }
 
-    const editAQuote = async (quote) => {
+    // const editAQuote = async (quote) => {
 
-        console.log(quote)
-    }
+    //     console.log(quote)
+    // }
 
     useEffect(() => {
         if (!userData.user) {
@@ -133,7 +135,8 @@ const SecureQuotes = () => {
 
                                     <div>
                                         <h6>Edit Quote</h6>
-                                        <form onSubmit={edit}>
+                                        <form>
+                                            {/* <form onSubmit={edit(quote)}> */}
 
                                             <div className="row justify-content-center">
                                                 <textarea
@@ -170,7 +173,8 @@ const SecureQuotes = () => {
                                                     className="col-md-6 margin-small"></input>
                                             </div>
                                             <div className="row justify-content-center">
-                                                <button onClick={() => editAQuote(quote)} className="btn btn-danger col-md-6 margin-small" >Edit Quote</button>
+                                                {/* <button className="btn btn-danger col-md-6 margin-small" >Edit Quote</button> */}
+                                                <button onClick={() => edit(quote)} className="btn btn-danger col-md-6 margin-small" >Edit Quote</button>
                                             </div>
 
                                         </form>
