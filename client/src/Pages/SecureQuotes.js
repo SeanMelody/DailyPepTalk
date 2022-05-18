@@ -21,9 +21,9 @@ const SecureQuotes = () => {
         tags: [],
     })
     // Set the change for state
-    const onChange = (e) => {
-        setEditQuote({ ...editQuote, [e.target.name]: e.target.value })
-    }
+    // const onChange = (e) => {
+    //     setEditQuote({ ...editQuote, [e.target.name]: e.target.value })
+    // }
 
     const getSecureQuoteList = async () => {
 
@@ -60,20 +60,24 @@ const SecureQuotes = () => {
 
     }
 
-    const edit = async (quote) => {
-        // e.preventDefault();
-        console.log(editQuote)
-        console.log()
+    const setPrevent = (e) => {
+        e.preventDefault()
 
-        try {
-            axios.post("/api/editquote", { data: { source: editQuote } })
-                .then((data) => {
-                    console.log(data)
-                })
-            console.log("edited successfully")
-        } catch (error) {
-            console.log(error)
-        }
+    }
+
+    const edit = (quote) => {
+        setEditQuote(quote)
+
+        console.log(quote, editQuote)
+        // try {
+        //     axios.post("/api/editquote", { data: { source: editQuote } })
+        //         .then((data) => {
+        //             console.log(data)
+        //         })
+        //     console.log("edited successfully")
+        // } catch (error) {
+        //     console.log(error)
+        // }
     }
 
     // const editAQuote = async (quote) => {
@@ -144,37 +148,37 @@ const SecureQuotes = () => {
                                                     name="quote"
                                                     id="quote"
                                                     defaultValue={quote.quote}
-                                                    onChange={onChange}
+
                                                     className="col-md-12 margin-small">
                                                 </textarea>
                                             </div>
                                             <div className="row justify-content-center">
-                                                <input type="text"
+                                                <textarea type="text"
                                                     name="author"
                                                     id="author"
-                                                    placeholder={quote.author}
-                                                    onChange={onChange}
-                                                    className="col-md-6 margin-small"></input>
+                                                    defaultValue={quote.author}
+                                                    // onChange={onChange}
+                                                    className="col-md-6 margin-small"></textarea>
                                             </div>
                                             <div className="row justify-content-center">
-                                                <input type="text"
+                                                <textarea type="text"
                                                     name="submittedBy"
                                                     id="submittedBy"
-                                                    placeholder={quote.submittedBy}
-                                                    onChange={onChange}
-                                                    className="col-md-6 margin-small"></input>
+                                                    defaultValue={quote.submittedBy}
+                                                    // onChange={onChange}
+                                                    className="col-md-6 margin-small"></textarea>
                                             </div>
                                             <div className="row justify-content-center">
-                                                <input type="text"
+                                                <textarea type="text"
                                                     name="tags"
                                                     id="tags"
-                                                    placeholder={quote.tags}
-                                                    onChange={onChange}
-                                                    className="col-md-6 margin-small"></input>
+                                                    defaultValue={quote.tags}
+                                                    // onChange={onChange}
+                                                    className="col-md-6 margin-small"></textarea>
                                             </div>
                                             <div className="row justify-content-center">
                                                 {/* <button className="btn btn-danger col-md-6 margin-small" >Edit Quote</button> */}
-                                                <button onClick={() => edit(quote)} className="btn btn-danger col-md-6 margin-small" >Edit Quote</button>
+                                                <button onClick={() => { setPrevent(); edit(quote) }} className="btn btn-danger col-md-6 margin-small" >Edit Quote</button>
                                             </div>
 
                                         </form>

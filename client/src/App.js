@@ -72,6 +72,7 @@ function App() {
                 <button className="btn btn-outline-dark margin10">Admin Login</button>
               </Link>
             </nav>
+            <hr></hr>
 
           </>
           :
@@ -88,7 +89,7 @@ function App() {
               </Link>
               <button onClick={logout} className="btn btn btn-outline-danger margin10">Logout</button>
             </nav>
-
+            <hr></hr>
           </>
         }
 
