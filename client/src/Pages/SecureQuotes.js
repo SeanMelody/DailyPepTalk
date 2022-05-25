@@ -21,9 +21,9 @@ const SecureQuotes = () => {
         tags: [],
     })
     // Set the change for state
-    // const onChange = (e) => {
-    //     setEditQuote({ ...editQuote, [e.target.name]: e.target.value })
-    // }
+    const onChange = (e) => {
+        setEditQuote({ ...editQuote, [e.target.name]: e.target.value })
+    }
 
     const getSecureQuoteList = async () => {
 
@@ -60,15 +60,19 @@ const SecureQuotes = () => {
 
     }
 
-    const setPrevent = (e) => {
+    // const setPrevent = (e) => {
+    //     e.preventDefault()
+
+    // }
+
+    const edit = (e) => {
+
         e.preventDefault()
 
-    }
+        console.log(editQuote)
+        // setEditQuote(quote)
 
-    const edit = (quote) => {
-        setEditQuote(quote)
-
-        console.log(quote, editQuote)
+        // console.log(quote, editQuote)
         // try {
         //     axios.post("/api/editquote", { data: { source: editQuote } })
         //         .then((data) => {
@@ -148,7 +152,7 @@ const SecureQuotes = () => {
                                                     name="quote"
                                                     id="quote"
                                                     defaultValue={quote.quote}
-
+                                                    onChange={onChange}
                                                     className="col-md-12 margin-small">
                                                 </textarea>
                                             </div>
@@ -157,7 +161,7 @@ const SecureQuotes = () => {
                                                     name="author"
                                                     id="author"
                                                     defaultValue={quote.author}
-                                                    // onChange={onChange}
+                                                    onChange={onChange}
                                                     className="col-md-6 margin-small"></textarea>
                                             </div>
                                             <div className="row justify-content-center">
@@ -165,7 +169,7 @@ const SecureQuotes = () => {
                                                     name="submittedBy"
                                                     id="submittedBy"
                                                     defaultValue={quote.submittedBy}
-                                                    // onChange={onChange}
+                                                    onChange={onChange}
                                                     className="col-md-6 margin-small"></textarea>
                                             </div>
                                             <div className="row justify-content-center">
@@ -173,12 +177,12 @@ const SecureQuotes = () => {
                                                     name="tags"
                                                     id="tags"
                                                     defaultValue={quote.tags}
-                                                    // onChange={onChange}
+                                                    onChange={onChange}
                                                     className="col-md-6 margin-small"></textarea>
                                             </div>
                                             <div className="row justify-content-center">
-                                                {/* <button className="btn btn-danger col-md-6 margin-small" >Edit Quote</button> */}
-                                                <button onClick={() => { setPrevent(); edit(quote) }} className="btn btn-danger col-md-6 margin-small" >Edit Quote</button>
+                                                <button onClick={edit} className="btn btn-danger col-md-6 margin-small" >Edit Quote</button>
+                                                {/* <button onClick={() => { setPrevent(); edit(quote) }} className="btn btn-danger col-md-6 margin-small" >Edit Quote</button> */}
                                             </div>
 
                                         </form>
