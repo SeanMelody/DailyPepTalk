@@ -73,15 +73,15 @@ const SecureQuotes = () => {
         // setEditQuote(quote)
 
         // console.log(quote, editQuote)
-        // try {
-        //     axios.post("/api/editquote", { data: { source: editQuote } })
-        //         .then((data) => {
-        //             console.log(data)
-        //         })
-        //     console.log("edited successfully")
-        // } catch (error) {
-        //     console.log(error)
-        // }
+        try {
+            axios.put("/api/editquote", { data: { source: editQuote } })
+                .then((data) => {
+                    console.log(data)
+                })
+            console.log("edited successfully")
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     // const editAQuote = async (quote) => {

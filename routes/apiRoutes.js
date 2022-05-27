@@ -158,10 +158,10 @@ router.delete("/deletequote", async (req, res) => {
     }
 })
 
-router.delete("/editquote", async (req, res) => {
+router.put("/editquote", async (req, res) => {
     // console.log("delete quote hit")
     try {
-        console.log("edit quote hit", req.body.source)
+        console.log("edit quote hit", req.body)
 
         // let deleteId = req.body.source._id
 
