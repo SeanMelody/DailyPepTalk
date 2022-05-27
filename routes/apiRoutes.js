@@ -161,13 +161,12 @@ router.delete("/deletequote", async (req, res) => {
 router.put("/editquote", async (req, res) => {
     // console.log("delete quote hit")
     try {
-        console.log("edit quote hit", req.body)
+        console.log("edit quote hit", req.body.data.source)
+        console.log(req.body.data.source._id)
 
-        // let deleteId = req.body.source._id
+        // const updateOne = await Quotes.updateOne({ _id: req.body._id }, req.body)
 
-        // const deleteOne = await Quotes.deleteOne({ _id: deleteId })
-        // res.json(deleteOne.data)
-        // console.log("successfully deleted")
+
 
 
     } catch (error) {
