@@ -36,27 +36,28 @@ const Home = () => {
 
     return (
         <div>
+            <h1>Daily Quotes From a Best Friend</h1>
+            <p>Inspired by: <a href="https://dailypeptalkfromabestfriend.com/">dailypeptalkfromabestfriend.com</a></p>
+            {
+                quotes.length ? (
+                    // Map through the quotes database displaying each as a Quotes Component
+                    <div className="container">
+                        {quotes.map((quote) => (
+
+                            <Quotes quote={quote} key={quote._id} />
+
+                        ))}
+
+                    </div>
+                ) : (
+                    // Display if the Database is down, or route not working correctly
+                    <div>
+                        <p>Quotes not loading</p>
+                    </div>
+                )
+            }
             {/* External Quote Component to load quotes from RapidAPI */}
             <ExternalQuote />
-
-            {quotes.length ? (
-                // Map through the quotes database displaying each as a Quotes Component
-                <div className="container">
-                    {quotes.map((quote) => (
-
-                        <Quotes quote={quote} key={quote._id} />
-
-                    ))}
-
-                </div>
-            ) : (
-                // Display if the Database is down, or route not working correctly
-                <div>
-                    <p>Quotes not loading</p>
-                </div>
-            )
-            }
-
 
             <Footer />
         </div >

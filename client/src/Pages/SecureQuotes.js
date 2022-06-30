@@ -60,10 +60,6 @@ const SecureQuotes = () => {
 
     }
 
-    // const setPrevent = (e) => {
-    //     e.preventDefault()
-
-    // }
 
     const edit = (e) => {
 

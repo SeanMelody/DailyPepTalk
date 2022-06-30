@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import axios from "axios"
 
 const ExternalQuote = () => {
@@ -19,20 +19,16 @@ const ExternalQuote = () => {
 
     }
 
-    // useEffect(() => {
-    //     quoteGen()
-
-    // }, [])
-
-
     return (
-        <div>ExternalQuote
-
-            <h1>Press Me for a quote!</h1>
-            <button onClick={quoteGen}>Quote</button>
+        <div>
+            <hr></hr>
+            <h3>You reached the end of the Quotes</h3>
+            <h5>But if you would like a randomly generated quote, hit this button!</h5>
+            <button className="btn btn-outline-dark" onClick={quoteGen}>Quote</button>
 
 
             <div>
+                <br></br>
                 <p>{extQuote.quote}</p>
                 <h3>{extQuote.author}</h3>
 
